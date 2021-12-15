@@ -26,29 +26,30 @@ const Users = ({users, setActiveUser, setUserName, clearPrevData}) => {
             <div className={classes.loading}>Loading...</div>
         </div>
     )
-
-        usersFromServer = data.search.edges.map(({ node }) => {
+        if(data){
+            usersFromServer = data.search.edges.map(({ node }) => {
             
-            setUserName(node.name)
-
-            const activeUserClick = (owner) => {
-                clearPrevData()
-                setActiveUser(owner)
-            }
-
-            return (
-                <div className={classes.userItem} key={node.id} onClick={() => activeUserClick(node.login)}>
-                    <img src={node.avatarUrl} alt="" />
-                    <div className={classes.names}>{node.name}</div>
-                </div>
-            )
-        })
-
+                setUserName(node.name)
+    
+                const activeUserClick = (owner) => {
+                    clearPrevData()
+                    setActiveUser(owner)
+                }
+    
+                return (
+                    <div className={classes.userItem} key={node.id} onClick={() => activeUserClick(node.login)}>
+                        <img src={node.avatarUrl} alt="" />
+                        <div className={classes.names}>{node.name}</div>
+                    </div>
+                )
+            })
+        }
+        
     return (
         <div className={classes.main}>
         <div className={classes.usersTitle}>Users</div>
         <div className={classes.usersWrapper}>
-            {usersFromServer}
+            {data && usersFromServer}
         </div>
         </div>
     )

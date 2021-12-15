@@ -44,7 +44,7 @@ const IssuesPage = ({login, currentRepo, starsCount, watchCount, userName, setOp
                      New Issue
                 </Button>
             </div>
-            {issuesFromServer.length !== 0 ? issuesFromServer : <div className={classes.issuesNotific}>There are no issues here...</div>}
+            {data && issuesFromServer.length !== 0 ? issuesFromServer : <div className={classes.issuesNotific}>There are no issues here...</div>}
         </div>
     )
 }
