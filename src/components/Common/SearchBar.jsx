@@ -5,13 +5,14 @@ import TextField from '@mui/material/TextField';
 import classes from './SearchBar.module.css';
 import { useState } from "react";
 
-const SearchBar = ({setUsers}) => {
+const SearchBar = ({setUsers, clearPrevData}) => {
 
     let [inputValue, setInputValue] = useState('');
 
     let onSearchBtnClick = () => {
         setUsers(inputValue)
         setInputValue('')
+        clearPrevData()
     }
 
     return (

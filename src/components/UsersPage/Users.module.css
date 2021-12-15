@@ -1,7 +1,17 @@
+.main {
+    margin-top: 30px;
+}
+
 .usersWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.usersTitle {
+    font-size: 30px;
+    width: 860px;
+    margin: 0 auto;
 }
 
 .userItem {
@@ -11,6 +21,7 @@
     margin: 10px;
     overflow: hidden;
     text-align: center;
+    cursor: pointer;
 }
 
 .userItem img {
@@ -37,3 +48,6 @@
     font-size: 20px;
 }
 
+.activeUser {
+    border: 1px solid red;
+}

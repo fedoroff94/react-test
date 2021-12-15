@@ -1,35 +1,27 @@
-.repoWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.repoContainer {
-    display: flex;
-    flex-direction: column;
+.issuesWrapper {
     margin: 0 auto;
     width: 45%;
-    margin-top: 30px;
 }
 
-.repo {
+.repoTitleContainer {
     display: flex;
     justify-content: space-between;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.repoName {
-    font-size: 20px;
-}
-
-.repoInfo {
-    font-size: 20px;
-}
-
-.repoTitle {
     font-size: 30px;
-    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.issuesContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-top: 70px;
+}
+
+.issue {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .loadingWrapper {
@@ -47,7 +39,7 @@
     font-size: 20px;
 }
 
-.repoNotific {
+.issuesNotific {
     margin-top: 40px;
     font-size: 30px;
     text-align: center;

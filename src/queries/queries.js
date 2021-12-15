@@ -22,7 +22,7 @@ export const GET_USERS = gql `
 export const GET_REPOSITORIES = gql `
     query GetRepositories($login: String!) {
         user(login: $login) {
-    			repositories(first: 6){
+    			repositories(first: 10){
       		edges {
             node {
               name
@@ -36,4 +36,33 @@ export const GET_REPOSITORIES = gql `
         }	
     }	
 }
+`
+
+export const GET_ISSUES_OF_REPO = gql `
+    query GetIssuesOfRepo($login: String!, $name: String!) {
+        user(login: $login) {
+            repository(name: $name){
+   		        issues (first: 10){
+                edges {
+                node {
+                title
+                id
+                createdAt
+          }
+        }
+      }
+    }
+  }
+}
+`
+
+export const ADD_NEW_ISSUE = gql`
+    mutation AddNewIssue($id: String!, $title: String!, $body: String) {
+        createIssue(input: {repositoryId: $id, title: $title, body: $body}) {
+            issue {
+                number
+                body
+              }
+        }
+    }
 `
